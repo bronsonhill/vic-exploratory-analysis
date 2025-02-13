@@ -1,0 +1,5 @@
+.env
+venv
+category_book.csv
+thesis_records_test.csv
+thesis_records_train.csv
