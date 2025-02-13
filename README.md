@@ -56,3 +56,33 @@ To classify theses using the `gpt_classify.py` script, follow these steps:
       - `CATEGORY_BOOK_PATH`: Path to your category book CSV file.
 
 The classification results will be saved in a CSV file with a timestamp in the filename.
+
+## Output Format
+
+The classification results will be saved in a CSV file with a timestamp in the filename. The CSV file will contain the following columns:
+
+- `Link`: The link to the thesis.
+- `Category1`, `Category2`, ...: Columns for each category from the category book, with values 1 (true) or 0 (false) indicating whether the category applies to the thesis.
+
+Example:
+
+```
+Link,Net-Net Asset Plays,Excess Cash Bargain,...
+http://example.com/thesis1,1,0,...
+http://example.com/thesis2,0,1,...
+```
+
+## Category Book Format
+
+The category book CSV file should have the following columns:
+
+- `Label`: The name of the investment category.
+- `Description`: A brief description of the investment category.
+- `Method`: The method used to identify the category in the thesis. (Not used in this script)
+
+Example:
+
+```
+Label,Description,Method
+Net-Net Asset Plays,Buy firms trading below net current asset value (NCAV).,"Filter for Price < (Current Assets – Total Liabilities), ensuring basic business viability."
+Excess Cash Bargain,Focus on companies whose cash exceeds their market cap.,Screen for negative enterprise value; check that core operations are at least stable.
